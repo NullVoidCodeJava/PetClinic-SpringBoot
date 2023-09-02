@@ -1,4 +1,4 @@
-package tech.vedantchimote.petclinic.model;
+package tech.vedantchimote.model;
 
 import java.time.LocalDate;
 
