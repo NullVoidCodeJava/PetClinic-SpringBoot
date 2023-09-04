@@ -46,7 +46,6 @@
             <checkModificationExclude>pom.xml</checkModificationExclude>
           </checkModificationExcludes>
         </configuration>
-
       </plugin>
     </plugins>
   </build>
