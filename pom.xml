@@ -24,8 +24,8 @@
   <distributionManagement>
     <repository>
       <id>petclinic</id>
-      <name>Github vedantchimote</name>
-      <url>https://maven.pkg.github.com/vedantchimote/pet-clinic.git</url>
+      <name>Pet-Clinic</name>
+      <url>https://github.com/vedantchimote/pet-clinic.git</url>
     </repository>
 
   </distributionManagement>
