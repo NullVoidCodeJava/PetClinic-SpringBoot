@@ -21,6 +21,15 @@
     <java.version>17</java.version>
   </properties>
 
+  <distributionManagement>
+    <repository>
+      <id>petclinic</id>
+      <name>Github vedantchimote</name>
+      <url>https://maven.pkg.github.com/vedantchimote/pet-clinic.git</url>
+    </repository>
+
+  </distributionManagement>
+
   <build>
     <plugins>
       <plugin>
