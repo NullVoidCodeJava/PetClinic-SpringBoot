@@ -9,7 +9,7 @@
   </parent>
   <groupId>tech.vedantchimote</groupId>
   <artifactId>pet-clinic</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.5-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>pet-clinic</name>
   <description>pet-clinic</description>
@@ -74,6 +74,6 @@
     <connection>scm:git:git@github.com:vedantchimote/pet-clinic.git</connection>
     <developerConnection>scm:git:git@github.com:vedantchimote/pet-clinic.git</developerConnection>
     <url>https://github.com/vedantchimote/pet-clinic.git</url>
-    <tag>pet-clinic-0.0.4</tag>
+    <tag>pet-clinic</tag>
   </scm>
 </project>
