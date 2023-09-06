@@ -57,6 +57,8 @@
         </configuration>
       </plugin>
     </plugins>
+    <!-- setting the final name for the docker image. -->
+    <finalName>petclinic</finalName>
   </build>
 
   <developers>
