@@ -3,7 +3,7 @@
   <parent>
     <groupId>tech.vedantchimote</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
   </parent>
 
   <artifactId>pet-clinic-web</artifactId>
@@ -26,7 +26,7 @@
     <dependency>
       <groupId>tech.vedantchimote</groupId>
       <artifactId>pet-clinic-data</artifactId>
-      <version>0.0.4-SNAPSHOT</version>
+      <version>0.0.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
