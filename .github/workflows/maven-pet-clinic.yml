@@ -1,6 +1,6 @@
 #Standard Maven CICD Workflow
 #Maintain different workflow for different modules
-name: PetClinic-Data-Workflow
+name: PetClinic-Workflow
 
 on:
   push:
@@ -37,20 +37,20 @@ jobs:
       - run: mvn --batch-mode --update-snapshots verify
         #Be careful with the path for the target folder, this is for multi module
         # For non multi module project the target folder will be present at root
-      - run: mkdir staging && cp pet-clinic-data/target/*.jar staging
+      - run: mkdir staging && cp target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
           name: Package
           path: staging
             
-#      #workflow for building and pushing docker image to docker hub
-#      - name: Build & push Docker PetClinic-Data image
-#        uses: mr-smithers-excellent/docker-build-push@v6
-#        with:
-#            image: astacode/petclinic-data
-#            tags: latest
-#            registry: docker.io
-#            dockerfile: pet-clinic-data/Dockerfile-PetClinicData
-#            #set the secrets in github secrets
-#            username: ${{ secrets.DOCKER_USERNAME }}
-#            password: ${{ secrets.DOCKER_PASSWORD }}
+      #workflow for building and pushing docker image to docker hub
+      - name: Build & push Docker PetClinic image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+            image: astacode/petclinic
+            tags: latest
+            registry: docker.io
+            dockerfile: Dockerfile
+            #set the secrets in github secrets
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
