@@ -1,4 +1,9 @@
-FROM openjdk:17
-EXPOSE 8080
-ADD pet-clinic-data/target/petclinic-data.jar petclinic-data.jar
-ENTRYPOINT ["java", "-jar", "petclinic-data.jar"]
+#FROM openjdk:17
+#EXPOSE 8080
+#ADD pet-clinic-data/target/petclinic-data.jar petclinic-data.jar
+#ENTRYPOINT ["java", "-jar", "petclinic-data.jar"]
+#
+#FROM openjdk:17
+#EXPOSE 8080
+#ADD pet-clinic-web/target/petclinic-web.jar petclinic-web.jar
+#ENTRYPOINT ["java", "-jar", "petclinic-web.jar"]

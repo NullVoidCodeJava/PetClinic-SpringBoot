@@ -50,7 +50,7 @@ jobs:
           image: astacode/petclinic-web
           tags: latest
           registry: docker.io
-          dockerfile: Dockerfile
+          dockerfile: Dockerfile-PetClinicWeb
           #set the secrets in github secrets
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
