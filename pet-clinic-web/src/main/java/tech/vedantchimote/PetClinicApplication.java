@@ -12,7 +12,7 @@ public class PetClinicApplication {
   //Test endpoint
   @GetMapping("/welcome")
   public String getMessage() {
-    return "Hello World!";
+    return "Welcome";
   }
 
   public static void main(String[] args) {
