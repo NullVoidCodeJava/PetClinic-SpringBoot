@@ -1,5 +1,6 @@
 #Standard Maven CICD Workflow
-name: PetClinic-CICD-Actions
+#Maintain different workflow for different modules
+name: PetClinic-Data-Workflow
 
 on:
   push:
@@ -34,6 +35,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - run: mvn --batch-mode --update-snapshots verify
+        #Be careful with the path for the target folder, this is for multi module
+        # For non multi module project the target folder will be present at root
       - run: mkdir staging && cp pet-clinic-data/target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
