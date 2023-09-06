@@ -1,4 +1,4 @@
-#Standard Workflow
+#Standard Maven CICD Workflow
 name: PetClinic-CICD-Actions
 
 on:
