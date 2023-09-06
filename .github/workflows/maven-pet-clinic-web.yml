@@ -35,7 +35,6 @@ jobs:
           distribution: 'temurin'
       - run: mvn --batch-mode --update-snapshots verify
       - run: mkdir staging && cp pet-clinic-web/target/*.jar staging
-      - run: mkdir staging && cp pet-clinic-data/target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
           name: Package
