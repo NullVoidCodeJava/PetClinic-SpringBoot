@@ -1,0 +1,41 @@
+/**
+ * Created By Vedant Chimote Date : 07-09-2023 Time : 19:33 Project-Name : ownpetclinic
+ */
+
+package tech.vedantchimote.services.map;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public abstract class AbstractMapService<T, ID> {
+
+  protected Map<ID, T> map = new HashMap<ID, T>();
+
+  Set<T> findAll() {
+    return new HashSet<>(map.values());
+  }
+
+  T findById(ID id) {
+    return map.get(id);
+  }
+
+  T save(ID id, T object) {
+    map.put(id, object);
+    return object;
+  }
+
+  void deleteById(ID id) {
+    map.remove(id);
+  }
+
+  void deleteAll() {
+    map.clear();
+  }
+
+  void delete(T object) {
+    map.entrySet().removeIf(entry -> entry.getValue().equals(object));
+  }
+
+}
