@@ -6,14 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
 public class PetClinicApplication {
-
-  //Test endpoint
-  @GetMapping("/welcome")
-  public String getMessage() {
-    return "Welcome";
-  }
 
   public static void main(String[] args) {
     SpringApplication.run(PetClinicApplication.class, args);
