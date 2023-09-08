@@ -7,8 +7,9 @@ package tech.vedantchimote.services.map;
 import java.util.Set;
 import tech.vedantchimote.model.Vet;
 import tech.vedantchimote.services.CrudService;
+import tech.vedantchimote.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
   @Override
   public Set<Vet> findAll() {
