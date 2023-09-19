@@ -1,0 +1,180 @@
+@startuml
+class tech.vedantchimote.model.Person {
+- String firstName
+- String lastName
++ String getFirstName()
++ void setFirstName(String)
++ String getLastName()
++ void setLastName(String)
+}
+class tech.vedantchimote.petclinic.PetClinicApplicationTests {
+~ void contextLoads()
+}
+class tech.vedantchimote.model.BaseEntity {
+- Long id
++ Long getId()
++ void setId(Long)
+}
+class tech.vedantchimote.model.Vet {
+}
+class tech.vedantchimote.model.PetType {
+- String name
++ String getName()
++ void setName(String)
+}
+class tech.vedantchimote.PetClinicApplication {
++ String getMessage()
++ {static} void main(String[])
+}
+interface tech.vedantchimote.services.VetService {
+}
+class tech.vedantchimote.model.Person {
+- String firstName
+- String lastName
++ String getFirstName()
++ void setFirstName(String)
++ String getLastName()
++ void setLastName(String)
+}
+interface tech.vedantchimote.services.OwnerService {
+~ Owner findByLastName(String)
+}
+class tech.vedantchimote.AppTest {
++ <<Create>> AppTest(String)
++ {static} Test suite()
++ void testApp()
+}
+class tech.vedantchimote.AppTest {
++ <<Create>> AppTest(String)
++ {static} Test suite()
++ void testApp()
+}
+class tech.vedantchimote.bootstrap.DataLoader {
+- OwnerService ownerService
+- VetService vetService
++ <<Create>> DataLoader()
++ void run(String)
+}
+class tech.vedantchimote.controllers.OwnerController {
++ String listOwners()
+}
+class tech.vedantchimote.model.Owner {
+}
+class tech.vedantchimote.model.Vet {
+}
+class tech.vedantchimote.services.map.PetServiceMap {
++ Set<Pet> findAll()
++ void deleteById(Long)
++ void delete(Pet)
++ Pet save(Pet)
++ Pet findById(Long)
+}
+class tech.vedantchimote.model.Pet {
+- PetType petType
+- Owner owner
+- LocalDate birthDate
++ PetType getPetType()
++ void setPetType(PetType)
++ Owner getOwner()
++ void setOwner(Owner)
++ LocalDate getBirthDate()
++ void setBirthDate(LocalDate)
+}
+class tech.vedantchimote.model.Pet {
+- PetType petType
+- Owner owner
+- LocalDate birthDate
++ PetType getPetType()
++ void setPetType(PetType)
++ Owner getOwner()
++ void setOwner(Owner)
++ LocalDate getBirthDate()
++ void setBirthDate(LocalDate)
+}
+class tech.vedantchimote.PetClinicApplication {
++ {static} void main(String[])
+}
+class tech.vedantchimote.model.PetType {
+- String name
++ String getName()
++ void setName(String)
+}
+class tech.vedantchimote.AppTest {
++ <<Create>> AppTest(String)
++ {static} Test suite()
++ void testApp()
+}
+class tech.vedantchimote.AppTest {
++ <<Create>> AppTest(String)
++ {static} Test suite()
++ void testApp()
+}
+abstract class tech.vedantchimote.services.map.AbstractMapService {
+# Map<ID,T> map
+~ Set<T> findAll()
+~ T findById(ID)
+~ T save(ID,T)
+~ void deleteById(ID)
+~ void deleteAll()
+~ void delete(T)
+}
+class tech.vedantchimote.model.Owner {
+}
+class tech.vedantchimote.petclinic.PetClinicApplicationTests {
+~ void contextLoads()
+}
+class tech.vedantchimote.controllers.IndexController {
++ String index()
+}
+interface tech.vedantchimote.services.PetService {
+}
+interface tech.vedantchimote.services.CrudService {
+~ Set<T> findAll()
+~ T findById(ID)
+~ T save(T)
+~ void delete(T)
+~ void deleteById(ID)
+}
+class tech.vedantchimote.services.map.OwnerServiceMap {
++ Set<Owner> findAll()
++ void deleteById(Long)
++ void delete(Owner)
++ Owner save(Owner)
++ Owner findById(Long)
++ Owner findByLastName(String)
+}
+class tech.vedantchimote.controllers.VetController {
++ String vets()
+}
+class tech.vedantchimote.services.map.VetServiceMap {
++ Set<Vet> findAll()
++ void deleteById(Long)
++ void delete(Vet)
++ Vet save(Vet)
++ Vet findById(Long)
+}
+
+
+tech.vedantchimote.model.BaseEntity <|-- tech.vedantchimote.model.Person
+java.io.Serializable <|.. tech.vedantchimote.model.BaseEntity
+tech.vedantchimote.model.Person <|-- tech.vedantchimote.model.Vet
+tech.vedantchimote.services.CrudService <|-- tech.vedantchimote.services.VetService
+tech.vedantchimote.services.CrudService <|-- tech.vedantchimote.services.OwnerService
+junit.framework.TestCase <|-- tech.vedantchimote.AppTest
+junit.framework.TestCase <|-- tech.vedantchimote.AppTest
+org.springframework.boot.CommandLineRunner <|.. tech.vedantchimote.bootstrap.DataLoader
+tech.vedantchimote.model.Person <|-- tech.vedantchimote.model.Owner
+tech.vedantchimote.model.Person <|-- tech.vedantchimote.model.Vet
+tech.vedantchimote.services.PetService <|.. tech.vedantchimote.services.map.PetServiceMap
+tech.vedantchimote.services.map.AbstractMapService <|-- tech.vedantchimote.services.map.PetServiceMap
+tech.vedantchimote.model.BaseEntity <|-- tech.vedantchimote.model.Pet
+tech.vedantchimote.model.BaseEntity <|-- tech.vedantchimote.model.PetType
+junit.framework.TestCase <|-- tech.vedantchimote.AppTest
+junit.framework.TestCase <|-- tech.vedantchimote.AppTest
+tech.vedantchimote.model.Person <|-- tech.vedantchimote.model.Owner
+tech.vedantchimote.services.CrudService <|-- tech.vedantchimote.services.PetService
+tech.vedantchimote.services.OwnerService <|.. tech.vedantchimote.services.map.OwnerServiceMap
+tech.vedantchimote.services.map.AbstractMapService <|-- tech.vedantchimote.services.map.OwnerServiceMap
+tech.vedantchimote.services.VetService <|.. tech.vedantchimote.services.map.VetServiceMap
+tech.vedantchimote.services.map.AbstractMapService <|-- tech.vedantchimote.services.map.VetServiceMap
+@enduml
