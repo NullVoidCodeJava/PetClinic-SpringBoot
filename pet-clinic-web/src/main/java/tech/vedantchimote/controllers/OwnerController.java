@@ -10,12 +10,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tech.vedantchimote.bootstrap.DataLoader;
 import tech.vedantchimote.model.Owner;
+import tech.vedantchimote.services.OwnerService;
 
 @Controller
 public class OwnerController {
 
+  private final OwnerService ownerService;
+
+  public OwnerController(OwnerService ownerService) {
+    this.ownerService = ownerService;
+  }
+
   @RequestMapping({"/owners", "owners/index", "/owners/index.html"})
-  public String listOwners() {
+  public String listOwners(Model model) {
+
+    model.addAttribute("owners", ownerService.findAll());
     return "owners/index";
   }
 
