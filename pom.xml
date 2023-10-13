@@ -61,6 +61,7 @@
     <finalName>petclinic</finalName>
   </build>
 
+  <!-- Following scm object required for maven release plugin -->
   <developers>
     <developer>
       <name>Vedant Chimote</name>
@@ -70,6 +71,7 @@
     </developer>
   </developers>
 
+  <!-- Following scm object required for maven release plugin -->
   <scm>
     <connection>scm:git:git@github.com:vedantchimote/pet-clinic.git</connection>
     <developerConnection>scm:git:git@github.com:vedantchimote/pet-clinic.git</developerConnection>

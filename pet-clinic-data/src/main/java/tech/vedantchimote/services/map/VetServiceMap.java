@@ -5,10 +5,12 @@
 package tech.vedantchimote.services.map;
 
 import java.util.Set;
+import org.springframework.stereotype.Service;
 import tech.vedantchimote.model.Vet;
 import tech.vedantchimote.services.CrudService;
 import tech.vedantchimote.services.VetService;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
   @Override

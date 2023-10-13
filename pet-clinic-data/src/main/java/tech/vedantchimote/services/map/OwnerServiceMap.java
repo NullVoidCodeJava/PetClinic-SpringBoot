@@ -5,10 +5,12 @@
 package tech.vedantchimote.services.map;
 
 import java.util.Set;
+import org.springframework.stereotype.Service;
 import tech.vedantchimote.model.Owner;
 import tech.vedantchimote.services.CrudService;
 import tech.vedantchimote.services.OwnerService;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
   @Override

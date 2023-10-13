@@ -7,14 +7,13 @@
 
 package tech.vedantchimote.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tech.vedantchimote.model.Owner;
 import tech.vedantchimote.model.Vet;
 import tech.vedantchimote.services.OwnerService;
 import tech.vedantchimote.services.VetService;
-import tech.vedantchimote.services.map.OwnerServiceMap;
-import tech.vedantchimote.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -22,9 +21,10 @@ public class DataLoader implements CommandLineRunner {
   private final OwnerService ownerService;
   private final VetService vetService;
 
-  public DataLoader() {
-    ownerService = new OwnerServiceMap();
-    vetService = new VetServiceMap();
+  @Autowired
+  public DataLoader(OwnerService ownerService, VetService vetService) {
+    this.ownerService = ownerService;
+    this.vetService = vetService;
   }
 
   @Override
@@ -57,6 +57,8 @@ public class DataLoader implements CommandLineRunner {
     vet2.setId(2L);
     vet2.setFirstName("Isha");
     vet2.setLastName("Adhaoo");
+
+    vetService.save(vet2);
 
     System.out.println("Loaded vets successfully");
   }
